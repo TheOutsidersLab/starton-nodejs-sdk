@@ -20,7 +20,7 @@ export default class Starton {
     onResponseError?: (context: FetchContext & { response: FetchResponse<ResponseType> }) => Promise<void> | void
   ) {
     this.client = ofetch.create({
-      baseURL: 'https://api.starton.io/v2',
+      baseURL: 'https://api.starton.io/v3',
       headers: { 'x-api-key': API_KEY },
       onRequest,
       onResponse,
@@ -31,5 +31,3 @@ export default class Starton {
     this.transaction = new Transaction(this.client)
   }
 }
-
-console.log()
