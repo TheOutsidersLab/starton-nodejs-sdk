@@ -72,7 +72,7 @@ export default class SmartContract extends DefaultModule {
   }
   /** Import a smart contract in starton project */
   importSmartContract(network: Network, address: string, body: SmartContractImportBody): Promise<SmartContractImportResponse> {
-    return this.client<SmartContractImportResponse>(`/smart-contract/${network}/${address}/read`, {
+    return this.client<SmartContractImportResponse>(`/smart-contract/import-existing`, {
       method: 'POST',
       body: {
         ...body,
