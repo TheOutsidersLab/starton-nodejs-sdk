@@ -1,9 +1,29 @@
+# Starton Library
+
 Starton library to use smart contract function via Starton
 
 # Description
+
 This SDK is a simple solution that allows you to call any smart contract via Starton API
 You just need to follow step by step this README =)
 
-# How to setup the project
+```js
+import Starton from '@theoutsiderslab/starton-nodejs-sdk'
 
-TODO
+const $starton = new Starton(/* my Starton API_KEY*/)
+
+$starton.smartContract.getSmartContractFunctions('ethereum-goerli', '')
+```
+
+Most of Starton endpoints are implemented.
+To read more about Starton API : https://docs.starton.io/
+
+# Installation
+
+```
+npm install @theoutsiderslab/starton-nodejs-sdk --save
+# or with yarn
+yarn add @theoutsiderslab/starton-nodejs-sdk
+```
+
+This library support both UMD and ESModule
