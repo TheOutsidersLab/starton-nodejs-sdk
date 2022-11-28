@@ -20,6 +20,13 @@ To read more about Starton API : https://docs.starton.io/
 
 # Installation
 
+Create a ```.npmrc``` file with the following text
+```
+@theoutsiderslab:registry=https://npm.pkg.github.com
+```
+
+You can now install like any other dependencies using npm
+
 ```
 npm install @theoutsiderslab/starton-nodejs-sdk --save
 # or with yarn
