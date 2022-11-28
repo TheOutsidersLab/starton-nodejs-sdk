@@ -6,11 +6,16 @@ import {
 } from 'ofetch'
 import SmartContract from './modules/SmartContract'
 import Transaction from "./modules/Transaction"
+import Kms from "./modules/Kms"
+
+export * from './../types/Parameters'
+export * from './../types/Responses'
 
 export default class Starton {
   public readonly client: $Fetch
   public readonly smartContract: SmartContract
   public readonly transaction: Transaction
+  public readonly kms: Kms
 
   constructor(
     API_KEY: string,
@@ -29,5 +34,6 @@ export default class Starton {
     })
     this.smartContract = new SmartContract(this.client)
     this.transaction = new Transaction(this.client)
+    this.kms = new Kms(this.client)
   }
 }

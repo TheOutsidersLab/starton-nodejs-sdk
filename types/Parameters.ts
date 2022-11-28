@@ -123,3 +123,9 @@ export interface TransactionCreateBody<T extends Network> {
   value?: string
   automaticNonce?: string
 }
+
+export interface SmartContractImportBody {
+  name: string
+  description: string
+  abi: Array<any>
+}

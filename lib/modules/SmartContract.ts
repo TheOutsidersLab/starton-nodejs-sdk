@@ -1,7 +1,7 @@
 import { $Fetch } from 'ofetch'
 import {
   Network,
-  SmartContractByteCodeBody, SmartContractCallBody,
+  SmartContractByteCodeBody, SmartContractCallBody, SmartContractImportBody,
   SmartContractListOptions, SmartContractReadBody,
   SmartContractTemplateBody
 } from '../../types/Parameters'
@@ -10,7 +10,7 @@ import {
   SmartContractCallResponse,
   SmartContractDeploy,
   SmartContractFunctions,
-  SmartContractList, SmartContractReadResponse
+  SmartContractList, SmartContractReadResponse, SmartContractImportResponse
 } from '../../types/Responses'
 import DefaultModule from "../shared/BasicModule";
 
@@ -70,5 +70,15 @@ export default class SmartContract extends DefaultModule {
       body
     })
   }
-
+  /** Import a smart contract in starton project */
+  importSmartContract(network: Network, address: string, body: SmartContractImportBody): Promise<SmartContractImportResponse> {
+    return this.client<SmartContractImportResponse>(`/smart-contract/${network}/${address}/read`, {
+      method: 'POST',
+      body: {
+        ...body,
+        network,
+        address
+      }
+    })
+  }
 }
